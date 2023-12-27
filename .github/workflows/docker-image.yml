@@ -12,7 +12,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: SonarQube Scan
-        uses: sonarsource/sonarcloud-github-action@2.311.0
+        uses: sonarsource/sonarcloud-github-action@v3
         env:
               SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
