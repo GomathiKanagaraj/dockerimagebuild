@@ -14,9 +14,8 @@ jobs:
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          SONAR_HOST_URL : ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL : ${{ secrets.SONAR_HOST_URL }}
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
