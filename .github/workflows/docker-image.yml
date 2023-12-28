@@ -12,10 +12,11 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
+        uses: sonarsource/sonarqube-scan-action@sqp_6d78f922ca8223f6753088e2da74df3a7716474f
         env:
-              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+              SONAR_USERNAME : ${{secrets.SONAR_USERNAME}}
+              SONAR_PASSWORD : ${{secrets.SONAR_PASSWORD}}
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
