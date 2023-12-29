@@ -27,7 +27,7 @@ jobs:
 
     - name: Run SonarQube analysis with debug
       run: |
-        sonar-scanner \
+        /path/to/sonar-scanner \
         -D"sonar.projectKey=cicd-sonartest" 
         -D"sonar.sources=." 
         -D"sonar.host.url=https://sonar.ccapps.in" 
