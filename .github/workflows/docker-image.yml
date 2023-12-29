@@ -11,16 +11,11 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-      - name: Run SonarQube analysis with debug
-        run: |
-             sonar-scanner \
-             -D"sonar.projectKey=cicd-sonartest" 
-             -D"sonar.sources=." 
-             -D"sonar.host.url=https://sonar.ccapps.in" 
-             -D"sonar.login=sqp_8184ac69802a6f523fad3ebaf0cc07d0b74f08c9"
-             env:
-              SONAR_TOKEN: sqp_8184ac69802a6f523fad3ebaf0cc07d0b74f08c9
-
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://194.233.84.33:8086/
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
