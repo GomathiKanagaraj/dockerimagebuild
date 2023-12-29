@@ -15,7 +15,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-
+    - name: Install SonarScanner
+      run: |
+        # Install SonarScanner
+        curl -O https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+        unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+        export PATH=dockerimagebuild/.github/workflows/docker-image.yml/sonar-scanner-cli-4.6.2.2472-linux/bin
+        
     - name: Install dependencies
       run: npm install
 
