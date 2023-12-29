@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Run SonarQube analysis with debug
         run: |
-             sonar-scanner -X \
+             sonar-scanner \
              -D"sonar.projectKey=cicd-sonartest" 
              -D"sonar.sources=." 
              -D"sonar.host.url=https://sonar.ccapps.in" 
