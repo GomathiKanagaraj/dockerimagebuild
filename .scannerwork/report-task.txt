@@ -1,0 +1,6 @@
+projectKey=cicd-sonar-test
+serverUrl=https://sonar.ccapps.in
+serverVersion=9.8.0.63668
+dashboardUrl=https://sonar.ccapps.in/dashboard?id=cicd-sonar-test
+ceTaskId=AYyu8JfRyeH26YoEwt1l
+ceTaskUrl=https://sonar.ccapps.in/api/ce/task?id=AYyu8JfRyeH26YoEwt1l
