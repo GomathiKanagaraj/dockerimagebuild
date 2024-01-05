@@ -1,1 +1,16 @@
 
+name: Publish Docker image
+
+on:
+   workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set Docker credentials
+        run: echo gomathikanagaraj | docker login -u dckr_pat_fhjbzd_Z-kU_wTjFWUr6UBPhNS4 --password-stdin
