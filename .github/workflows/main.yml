@@ -1,31 +1,21 @@
-name: Publish Docker image
-
-on:
-   workflow_dispatch
-
-jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
-        with:
-          username: username
-          password: password
-      
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: gomathikanagaraj/dockerimagebuild
-      
-      - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+bmFtZTogUHVibGlzaCBEb2NrZXIgaW1hZ2UKCm9uOgogICB3b3JrZmxvd19k
+aXNwYXRjaAoKam9iczoKICBwdXNoX3RvX3JlZ2lzdHJ5OgogICAgbmFtZTog
+UHVzaCBEb2NrZXIgaW1hZ2UgdG8gRG9ja2VyIEh1YgogICAgcnVucy1vbjog
+dWJ1bnR1LWxhdGVzdAogICAgc3RlcHM6CiAgICAgIC0gbmFtZTogQ2hlY2sg
+b3V0IHRoZSByZXBvCiAgICAgICAgdXNlczogYWN0aW9ucy9jaGVja291dEB2
+MwogICAgICAtIG5hbWU6IExvZyBpbiB0byBEb2NrZXIgSHViCiAgICAgICAg
+dXNlczogZG9ja2VyL2xvZ2luLWFjdGlvbkBmMDU0YThiNTM5YTEwOWY5ZjQx
+YzM3MjkzMmYxYWUwNDdlZmYwOGM5CiAgICAgICAgd2l0aDoKICAgICAgICAg
+IHVzZXJuYW1lOiB1c2VybmFtZQogICAgICAgICAgcGFzc3dvcmQ6IHBhc3N3
+b3JkCiAgICAgIAogICAgICAtIG5hbWU6IEV4dHJhY3QgbWV0YWRhdGEgKHRh
+Z3MsIGxhYmVscykgZm9yIERvY2tlcgogICAgICAgIGlkOiBtZXRhCiAgICAg
+ICAgdXNlczogZG9ja2VyL21ldGFkYXRhLWFjdGlvbkA5ODY2OWFlODY1ZWEz
+Y2ZmYmNiYWE4NzhjZjU3YzIwYmJmMWM2YzM4CiAgICAgICAgd2l0aDoKICAg
+ICAgICAgIGltYWdlczogZ29tYXRoaWthbmFnYXJhai9kb2NrZXJpbWFnZWJ1
+aWxkCiAgICAgIAogICAgICAtIG5hbWU6IEJ1aWxkIGFuZCBwdXNoIERvY2tl
+ciBpbWFnZQogICAgICAgIHVzZXM6IGRvY2tlci9idWlsZC1wdXNoLWFjdGlv
+bkBhZDQ0MDIzYTkzNzExZTNkZWIzMzc1MDg5ODBiNGI1ZTliY2RjNWRjCiAg
+ICAgICAgd2l0aDoKICAgICAgICAgIGNvbnRleHQ6IC4KICAgICAgICAgIHB1
+c2g6IHRydWUKICAgICAgICAgIHRhZ3M6ICR7eyBzdGVwcy5tZXRhLm91dHB1
+dHMudGFncyB9fQogICAgICAgICAgbGFiZWxzOiAke3sgc3RlcHMubWV0YS5v
+dXRwdXRzLmxhYmVscyB9fQo=
